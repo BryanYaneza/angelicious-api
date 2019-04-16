@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="StoreDB@localhost">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.14">
+    <root id="1">
+      <ServerVersion>14.0.2002</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="ClearanceForm">
+      <ObjectId>8</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="3" parent="1" name="DWConfiguration">
+      <ObjectId>6</ObjectId>
+      <Collation>Latin1_General_100_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="4" parent="1" name="DWDiagnostics">
+      <ObjectId>5</ObjectId>
+      <Collation>Latin1_General_100_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="5" parent="1" name="DWQueue">
+      <ObjectId>7</ObjectId>
+      <Collation>Latin1_General_100_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="6" parent="1" name="Nexus">
+      <ObjectId>9</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="7" parent="1" name="Rubicon">
+      <ObjectId>10</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="8" parent="1" name="StoreDB">
+      <ObjectId>11</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="9" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="10" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="11" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="12" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <schema id="13" parent="8" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="14" parent="8" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="15" parent="8" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="16" parent="8" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="17" parent="8" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="18" parent="8" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="19" parent="8" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="20" parent="8" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="21" parent="8" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="22" parent="8" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="23" parent="8" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2019-04-16.17:11:53.720</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="24" parent="8" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="25" parent="8" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="26" parent="23" name="Categories">
+      <ObjectId>1237579447</ObjectId>
+      <CreatedTimestamp>2019-04-12.16:41:44.900</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-16.17:07:15.553</ModifiedTimestamp>
+    </table>
+    <table id="27" parent="23" name="OrderDetail">
+      <ObjectId>1333579789</ObjectId>
+      <CreatedTimestamp>2019-04-12.17:23:05.783</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-12.17:23:05.783</ModifiedTimestamp>
+    </table>
+    <table id="28" parent="23" name="Orders">
+      <ObjectId>1397580017</ObjectId>
+      <CreatedTimestamp>2019-04-12.17:35:47.647</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-12.17:35:47.647</ModifiedTimestamp>
+    </table>
+    <table id="29" parent="23" name="Product">
+      <ObjectId>1525580473</ObjectId>
+      <CreatedTimestamp>2019-04-16.17:11:21.577</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-16.17:11:21.577</ModifiedTimestamp>
+    </table>
+    <table id="30" parent="23" name="Users">
+      <ObjectId>1429580131</ObjectId>
+      <CreatedTimestamp>2019-04-12.17:35:59.187</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-12.17:35:59.187</ModifiedTimestamp>
+    </table>
+    <column id="31" parent="26" name="CategoryID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="26" name="CategorytUID">
+      <Position>2</Position>
+      <DataType>uniqueidentifier|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="26" name="CategoryName">
+      <Position>3</Position>
+      <DataType>varchar(15 char)|0s</DataType>
+    </column>
+    <column id="34" parent="26" name="Description">
+      <Position>4</Position>
+      <DataType>ntext|0s</DataType>
+    </column>
+    <index id="35" parent="26" name="PK__Categori__19093A2B116B3C2E">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CategoryID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="26" name="PK__Categori__19093A2B116B3C2E">
+      <ObjectId>1253579504</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-04-12.16:41:44.907</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-12.16:41:44.907</ModifiedTimestamp>
+      <ColNames>CategoryID</ColNames>
+      <UnderlyingIndexName>PK__Categori__19093A2B116B3C2E</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="27" name="OrderID">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="27" name="UserID">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="27" name="UnitPrice">
+      <Position>3</Position>
+      <DataType>decimal(18)|0s</DataType>
+    </column>
+    <column id="40" parent="27" name="Quantity">
+      <Position>4</Position>
+      <DataType>smallint|0s</DataType>
+    </column>
+    <column id="41" parent="27" name="Discount">
+      <Position>5</Position>
+      <DataType>decimal(18)|0s</DataType>
+    </column>
+    <column id="42" parent="28" name="OrderID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="28" name="OrderUID">
+      <Position>2</Position>
+      <DataType>uniqueidentifier|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="28" name="UserID">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="45" parent="28" name="OrderDate">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="46" parent="28" name="RequiredDate">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="47" parent="28" name="ShipppedDate">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <index id="48" parent="28" name="PK__Orders__C3905BAFAE6C9838">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>OrderID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="28" name="PK__Orders__C3905BAFAE6C9838">
+      <ObjectId>1413580074</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-04-12.17:35:47.647</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-12.17:35:47.647</ModifiedTimestamp>
+      <ColNames>OrderID</ColNames>
+      <UnderlyingIndexName>PK__Orders__C3905BAFAE6C9838</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="29" name="ProductID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="29" name="ProductUID">
+      <Position>2</Position>
+      <DataType>uniqueidentifier|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="29" name="ProductName">
+      <Position>3</Position>
+      <DataType>varchar(max)|0s</DataType>
+    </column>
+    <column id="53" parent="29" name="CategoryID">
+      <Position>4</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="54" parent="29" name="ProductPrice">
+      <Position>5</Position>
+      <DataType>decimal(18)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="29" name="ProductInStock">
+      <Position>6</Position>
+      <DataType>smallint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="29" name="ProductStatus">
+      <Position>7</Position>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="29" name="Description">
+      <Position>8</Position>
+      <DataType>ntext|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="58" parent="29" name="PK__Product__B40CC6ED7B059A31">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ProductID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="29" name="PK__Product__B40CC6ED7B059A31">
+      <ObjectId>1541580530</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-04-16.17:11:21.580</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-16.17:11:21.580</ModifiedTimestamp>
+      <ColNames>ProductID</ColNames>
+      <UnderlyingIndexName>PK__Product__B40CC6ED7B059A31</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="30" name="UserID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="30" name="UserUID">
+      <Position>2</Position>
+      <DataType>uniqueidentifier|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="30" name="UserEmailAddress">
+      <Position>3</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <column id="63" parent="30" name="UserLastName">
+      <Position>4</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <column id="64" parent="30" name="UserFirstName">
+      <Position>5</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <column id="65" parent="30" name="UserPhoneNumber">
+      <Position>6</Position>
+      <DataType>varchar(15 char)|0s</DataType>
+    </column>
+    <column id="66" parent="30" name="UserAddress">
+      <Position>7</Position>
+      <DataType>varchar(60 char)|0s</DataType>
+    </column>
+    <column id="67" parent="30" name="UserCity">
+      <Position>8</Position>
+      <DataType>varchar(40 char)|0s</DataType>
+    </column>
+    <column id="68" parent="30" name="UserRegion">
+      <Position>9</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <column id="69" parent="30" name="UserPostalCode">
+      <Position>10</Position>
+      <DataType>varchar(24 char)|0s</DataType>
+    </column>
+    <column id="70" parent="30" name="UserCountry">
+      <Position>11</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <index id="71" parent="30" name="PK__Users__1788CCACCCF252DC">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>UserID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="30" name="PK__Users__1788CCACCCF252DC">
+      <ObjectId>1445580188</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-04-12.17:35:59.190</CreatedTimestamp>
+      <ModifiedTimestamp>2019-04-12.17:35:59.190</ModifiedTimestamp>
+      <ColNames>UserID</ColNames>
+      <UnderlyingIndexName>PK__Users__1788CCACCCF252DC</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
