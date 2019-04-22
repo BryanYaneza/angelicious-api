@@ -1,33 +1,65 @@
 package com.angelicious.backendservice.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 import java.util.UUID;
 
 public class Users {
+    @Id
+    @Column(updatable = false, nullable = false, columnDefinition = "uuid DEFAULT uuid_generate_v4()",name = "orderid")
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    private UUID id;
+
     @NotBlank
-    private final UUID id;
+    @Email
+    @Column(name = "useremailaddress")
+    private String EmailAddress;
+
     @NotBlank
-    private final String EmailAddress;
+    @Column(name = "userlastname")
+    private String LastName;
+
     @NotBlank
-    private final String LastName;
+    @Column(name = "userfirstname")
+    private String FirstName;
+
     @NotBlank
-    private final String FirstName;
+    @Column(name = "userphonenumber")
+    private String PhoneNumber;
+
     @NotBlank
-    private final String PhoneNumber;
+    @Column(name = "useraddress")
+    private String Address;
+
     @NotBlank
-    private final String Address;
+    @Column(name = "usercity")
+    private String City;
+
     @NotBlank
-    private final String City;
+    @Column(name = "userregion")
+    private String Region;
+
     @NotBlank
-    private final String Region;
+    @Column(name = "userpostalcode")
+    private String PostalCode;
+
     @NotBlank
-    private final String PostalCode;
-    @NotBlank
-    private final String Country;
+    @Column(name = "usercountry")
+    private String Country;
+
+    @Column(name = "createdon")
+    private Date createdOn;
+
+    @Column(name = "updatedon")
+    private Date updatedOn;
 
 
-    public Users(@JsonProperty("uid") UUID uid,
-                 @JsonProperty("emailAddress") String emailAdd,
+    public Users(@JsonProperty("emailAddress") String emailAdd,
                  @JsonProperty("lastName") String lastName,
                  @JsonProperty("firstName") String firstName,
                  @JsonProperty("phoneNumber") String phoneNumber,
@@ -36,7 +68,6 @@ public class Users {
                  @JsonProperty("region") String region,
                  @JsonProperty("postalCode") String postalCode,
                  @JsonProperty("country") String country) {
-        this.id = uid;
         this.EmailAddress = emailAdd;
         this.LastName = lastName;
         this.FirstName = firstName;
@@ -46,6 +77,30 @@ public class Users {
         this.Region = region;
         this.PostalCode = postalCode;
         this.Country = country;
+    }
+
+    public Users(@JsonProperty("emailAddress") String emailAdd,
+                 @JsonProperty("lastName") String lastName,
+                 @JsonProperty("firstName") String firstName,
+                 @JsonProperty("phoneNumber") String phoneNumber,
+                 @JsonProperty("address") String address,
+                 @JsonProperty("city") String city,
+                 @JsonProperty("region") String region,
+                 @JsonProperty("postalCode") String postalCode,
+                 @JsonProperty("country") String country,
+                 @JsonProperty("createdon") Date createdOn,
+                 @JsonProperty("updatedon") Date updatedOn) {
+        this.EmailAddress = emailAdd;
+        this.LastName = lastName;
+        this.FirstName = firstName;
+        this.PhoneNumber = phoneNumber;
+        this.Address = address;
+        this.City = city;
+        this.Region = region;
+        this.PostalCode = postalCode;
+        this.Country = country;
+        this.setCreatedOn(createdOn);
+        this.setUpdatedOn(updatedOn);
     }
 
 
@@ -88,4 +143,12 @@ public class Users {
     public String getCountry() {
         return Country;
     }
+
+    public Date getCreatedOn() { return createdOn; }
+
+    public void setCreatedOn(Date createdOn) { this.createdOn = createdOn; }
+
+    public Date getUpdatedOn() { return updatedOn; }
+
+    public void setUpdatedOn(Date updatedOn) { this.updatedOn = updatedOn; }
 }

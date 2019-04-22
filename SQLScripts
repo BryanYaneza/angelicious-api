@@ -1,0 +1,118 @@
+--USER
+CREATE TABLE public.users
+(
+    userid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    useremailaddress character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    userlastname character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    userfirstname character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    userphonenumber character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    useraddress character varying(60) COLLATE pg_catalog."default" NOT NULL,
+    usercity character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    userregion character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    userpostalcode character varying(24) COLLATE pg_catalog."default" NOT NULL,
+    usercountry character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    createdon timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    updatedon timestamp with time zone,
+    CONSTRAINT users_pkey PRIMARY KEY (userid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.users
+    OWNER to postgres;
+
+--PRODUCT
+CREATE TABLE public.product
+(
+    productid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    productname character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    productdescription character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    categoryid uuid NOT NULL,
+    productprice numeric(7,2) NOT NULL,
+    productinstock quantity smallint NOT NULL,
+    productstatus boolean NOT NULL
+    createdon timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    updatedon timestamp with time zone NULL,
+    CONSTRAINT "Product_pkey" PRIMARY KEY (productid),
+    CONSTRAINT product_categoryid_fkey FOREIGN KEY (categoryid)
+        REFERENCES public.category (categoryid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.product
+OWNER to postgres;
+
+
+--ORDER
+CREATE TABLE public.orders
+(
+    orderid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    userid uuid NOT NULL,
+    orderdate timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    requireddate timestamp with time zone,
+    shippeddate timestamp with time zone,
+    CONSTRAINT orders_pkey PRIMARY KEY (orderid),
+    CONSTRAINT order_userid_fkey FOREIGN KEY (userid)
+        REFERENCES public.users (userid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.orders
+    OWNER to postgres;
+
+--OrderDetail
+CREATE TABLE public.orderdetail
+(
+    least_sig_bits bigint NOT NULL,
+    most_sig_bits bigint NOT NULL,
+    discount double precision,
+    productid uuid,
+    quantity integer,
+    unitprice double precision,
+    userid uuid,
+    CONSTRAINT orderdetail_pkey PRIMARY KEY (least_sig_bits, most_sig_bits),
+    CONSTRAINT uk_j2cod0gcnn1cthumcbjf2va5a UNIQUE (productid, userid)
+
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.orderdetail
+    OWNER to postgres;
+
+
+--CATEGORY
+CREATE TABLE public.category
+(
+    categoryid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    description character varying(255) COLLATE pg_catalog."default",
+    categoryname character varying(255) COLLATE pg_catalog."default",
+    createdon timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+    updatedon timestamp with time zone NULL,
+    CONSTRAINT category_pkey PRIMARY KEY (categoryid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.category
+OWNER to postgres;
+
+
+
+
