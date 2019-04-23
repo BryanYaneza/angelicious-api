@@ -41,7 +41,9 @@ public class Product {
     @Column(name = "productstatus")
     private Boolean status;
 
+    public Product(){
 
+    }
     public Product(@JsonProperty("name") String name,
                    @JsonProperty("description") String description,
                    @JsonProperty("categoryID") UUID categoryID,

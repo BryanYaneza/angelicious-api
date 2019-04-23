@@ -6,6 +6,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.beans.ConstructorProperties;
 import java.util.UUID;
 
 @Entity
@@ -24,6 +25,17 @@ public class Category {
     @Column(name = "categoryname")
     @NotBlank
     private String name;
+
+    public Category(){
+
+    }
+    public Category(@JsonProperty("id") UUID id,
+                    @JsonProperty("name") String name,
+                    @JsonProperty("description") String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
 
     public Category(@JsonProperty("name") String name,
                     @JsonProperty("description") String description) {

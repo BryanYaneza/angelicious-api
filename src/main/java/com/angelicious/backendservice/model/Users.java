@@ -58,7 +58,9 @@ public class Users {
     @Column(name = "updatedon")
     private Date updatedOn;
 
+    public Users(){
 
+    }
     public Users(@JsonProperty("emailAddress") String emailAdd,
                  @JsonProperty("lastName") String lastName,
                  @JsonProperty("firstName") String firstName,

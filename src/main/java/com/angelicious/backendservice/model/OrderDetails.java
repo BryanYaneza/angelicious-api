@@ -14,11 +14,11 @@ public class OrderDetails {
     @Id
     @NotBlank
     @Column(name = "orderid")
-    private final UUID orderID;
+    private UUID orderID;
 
     @NotBlank
     @Column(name = "userid")
-    private final UUID userID;
+    private UUID userID;
 
     @NotBlank
     @Column(name = "productid")
@@ -26,16 +26,19 @@ public class OrderDetails {
 
     @NotBlank
     @Column(name = "unitprice")
-    private final Double unitPrice;
+    private Double unitPrice;
 
     @NotBlank
     @Column(name = "quantity")
-    private final Integer quantity;
+    private Integer quantity;
 
     @NotBlank
     @Column(name = "discount")
-    private final Double discount;
+    private Double discount;
 
+    public OrderDetails(){
+
+    }
 
     public OrderDetails(@JsonProperty("orderID") UUID orderID,
                         @JsonProperty("userID") UUID userID,

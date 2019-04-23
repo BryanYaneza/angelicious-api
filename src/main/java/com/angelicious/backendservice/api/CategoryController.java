@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-@RequestMapping("api/user")
+@RequestMapping("backend/controller")
 @RestController
 public class CategoryController {
 
@@ -33,11 +33,11 @@ public class CategoryController {
         return categoryService.selectAllCategory();
     }
 
-//    @GetMapping(path = "{id}")
-//    public Category getPersonById(@PathVariable("id") UUID id) {
-//        return categoryService.getPersonById(id)
-//                .orElse(null);
-//    }
+    @GetMapping(path = "{id}")
+    public Category getPersonById(@PathVariable("id") UUID id) {
+        return categoryService.selectCategoryById(id)
+                .orElse(null);
+    }
 
     @DeleteMapping(path = "{id}")
     public void deletePersonById(@PathVariable("id") UUID id) {

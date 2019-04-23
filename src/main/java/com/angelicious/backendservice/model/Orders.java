@@ -33,6 +33,10 @@ public class Orders {
     @Column(name = "shippeddate")
     private Date shippedDate;
 
+
+    public Orders(){
+
+    }
     public Orders(@JsonProperty("uid") UUID uid,
                  @JsonProperty("userID") UUID userID,
                  @JsonProperty("orderDate") Date orderDate,

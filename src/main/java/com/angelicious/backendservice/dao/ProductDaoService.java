@@ -8,9 +8,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface ProductDaoService {
-    Product insertProduct(Product product);
+    int insertProduct(Product product);
     List<Product> selectAllProducts();
     Optional<Product> selectProductById(UUID id);
     void deleteProductById(UUID id);
-    Product updateProductById(UUID id, Product product);
+    int updateProductById(UUID id, Product product);
 }
