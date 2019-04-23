@@ -7,16 +7,16 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 import java.util.UUID;
-
+@Entity
+@Table(name = "users")
 public class Users {
     @Id
-    @Column(updatable = false, nullable = false, columnDefinition = "uuid DEFAULT uuid_generate_v4()",name = "orderid")
+    @Column(updatable = false, nullable = false, columnDefinition = "uuid DEFAULT uuid_generate_v4()",name = "userid")
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
     @NotBlank
-    @Email
     @Column(name = "useremailaddress")
     private String EmailAddress;
 
@@ -61,6 +61,29 @@ public class Users {
     public Users(){
 
     }
+
+    public Users(@JsonProperty("id") UUID id,
+                 @JsonProperty("emailAddress") String emailAdd,
+                 @JsonProperty("lastName") String lastName,
+                 @JsonProperty("firstName") String firstName,
+                 @JsonProperty("phoneNumber") String phoneNumber,
+                 @JsonProperty("address") String address,
+                 @JsonProperty("city") String city,
+                 @JsonProperty("region") String region,
+                 @JsonProperty("postalCode") String postalCode,
+                 @JsonProperty("country") String country) {
+        this.id = id;
+        this.EmailAddress = emailAdd;
+        this.LastName = lastName;
+        this.FirstName = firstName;
+        this.PhoneNumber = phoneNumber;
+        this.Address = address;
+        this.City = city;
+        this.Region = region;
+        this.PostalCode = postalCode;
+        this.Country = country;
+    }
+
     public Users(@JsonProperty("emailAddress") String emailAdd,
                  @JsonProperty("lastName") String lastName,
                  @JsonProperty("firstName") String firstName,

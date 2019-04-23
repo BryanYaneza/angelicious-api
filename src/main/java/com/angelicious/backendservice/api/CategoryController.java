@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-@RequestMapping("backend/controller")
+@RequestMapping("backend/controller/category")
 @RestController
 public class CategoryController {
 
@@ -23,12 +23,12 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @PostMapping
+    @PostMapping(path = "/adduser")
     public void addCategory(@Valid @NonNull @RequestBody Category category) {
         categoryService.insertCategory(category);
     }
 
-    @GetMapping
+    @GetMapping(path = "/getallusers")
     public List<Category> getAllCategory() {
         return categoryService.selectAllCategory();
     }
