@@ -5,7 +5,6 @@ import com.angelicious.backendservice.dao.CategoryDaoService;
 import com.angelicious.backendservice.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,11 +38,11 @@ public class CategoryService implements CategoryDaoService {
 
     @Override
     public void deleteCategoryById(UUID id) {
-        categoryDao.deleteById(id);
+         categoryDao.deleteById(id);
     }
 
     @Override
     public Category updateCategoryById(UUID id, Category category) {
-         return categoryDao.save(new Category(id,category.getName(),category.getDescription()));
+            return categoryDao.save(new Category(id,category.getName(),category.getDescription()));
     }
 }

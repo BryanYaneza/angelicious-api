@@ -1,6 +1,7 @@
 package com.angelicious.backendservice.dao;
 
 import com.angelicious.backendservice.model.Category;
+import com.angelicious.backendservice.model.Product;
 
 import java.util.List;
 import java.util.Optional;

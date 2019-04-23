@@ -44,18 +44,35 @@ public class Product {
     public Product(){
 
     }
+
+    public Product(@JsonProperty("id") UUID id,
+                   @JsonProperty("name") String name,
+                   @JsonProperty("description") String description,
+                   @JsonProperty("categoryID") UUID categoryID,
+                   @JsonProperty("price") Double price,
+                   @JsonProperty("stock") Integer stock,
+                   @JsonProperty("status") Boolean status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.categoryID = categoryID;
+        this.price = price;
+        this.stock = stock;
+        this.status = status;
+    }
+
     public Product(@JsonProperty("name") String name,
                    @JsonProperty("description") String description,
                    @JsonProperty("categoryID") UUID categoryID,
                    @JsonProperty("price") Double price,
                    @JsonProperty("stock") Integer stock,
                    @JsonProperty("status") Boolean status) {
-        this.setName(name);
-        this.setDescription(description);
-        this.setCategoryID(categoryID);
-        this.setPrice(price);
-        this.setStock(stock);
-        this.setStatus(status);
+        this.name = name;
+        this.description = description;
+        this.categoryID = categoryID;
+        this.price = price;
+        this.stock = stock;
+        this.status = status;
     }
 
 
